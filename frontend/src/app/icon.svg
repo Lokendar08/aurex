@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <title>AUREX</title>
+  <rect width="32" height="32" rx="7" fill="rgb(8,19,42)" style="fill: oklch(0.19 0.05 263)"/>
+  <g transform="translate(16 16.4) scale(0.8) translate(-16 -15.5)">
+    <path d="M4.5 27 L16 4 L27.5 27 H23.5 L16 12 L8.5 27 Z" fill="rgb(255,255,255)"/>
+    <circle cx="16" cy="22.4" r="2.4" fill="rgb(88,206,248)" style="fill: oklch(0.8 0.12 225)"/>
+  </g>
+</svg>

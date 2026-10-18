@@ -1,0 +1,22 @@
+# AUREX edge proxy (Caddy 2).
+# AUREX_SITE_ADDRESS=":80"            -> plain HTTP (local trial)
+# AUREX_SITE_ADDRESS="aurex.example.com" -> automatic HTTPS via Let's Encrypt (ports 80/443 must be reachable)
+{$AUREX_SITE_ADDRESS::80} {
+	encode zstd gzip
+
+	request_body {
+		# CSV/XLSX uploads are limited to AUREX_MAX_UPLOAD_MB (25 MB default) by the API; allow multipart overhead.
+		max_size 30MB
+	}
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		-Server
+	}
+
+	reverse_proxy web:3000 {
+		# Overwrite (never append) so a client cannot inject its own X-Forwarded-For value.
+		# The API trusts exactly one hop (AUREX_TRUSTED_PROXY_HOPS=1).
+		header_up X-Forwarded-For {remote_host}
+	}
+}

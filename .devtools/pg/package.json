@@ -1,0 +1,8 @@
+{
+  "name": "aurex-devtools-postgres",
+  "private": true,
+  "description": "Portable PostgreSQL 17 binaries for local development only (not used in Docker/production).",
+  "dependencies": {
+    "@embedded-postgres/windows-x64": "17.10.0-beta.17"
+  }
+}

@@ -1,0 +1,73 @@
+[project]
+name = "aurex-backend"
+version = "0.1.0"
+description = "AUREX - AI-powered business intelligence, integration, forecasting and decision simulation platform (API + workers)"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "sqlalchemy>=2.0.36",
+    "alembic>=1.14",
+    "psycopg[binary]>=3.2",
+    "pydantic>=2.9",
+    "pydantic-settings>=2.6",
+    "email-validator>=2.2",
+    "argon2-cffi>=23.1",
+    "pyjwt>=2.9",
+    "cryptography>=43",
+    "python-multipart>=0.0.12",
+    "pandas>=2.2",
+    "numpy>=2.0",
+    "scipy>=1.14",
+    "scikit-learn>=1.5",
+    "statsmodels>=0.14.4",
+    "openpyxl>=3.1",
+    "reportlab>=4.2",
+    "celery[redis]>=5.4",
+    "redis>=5.2",
+    "httpx>=0.27",
+    "feedparser>=6.0",
+    "anthropic>=0.40",
+    "python-dateutil>=2.9",
+    "tenacity>=9.0",
+    "joblib>=1.4",
+    "paramiko>=3.5",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-cov>=5.0",
+    "ruff>=0.7",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "slow: long-running tests (full NovaMart seed, model training)",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning:statsmodels.*",
+    "ignore::FutureWarning:statsmodels.*",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S"]
+ignore = ["S101", "S311", "B008", "E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S105", "S106", "S107"]
+# S608: these modules assemble SQL text only from constant fragments and identifiers defined in code
+# (table/column names from the entity specs, Scope.store_clause); every value is a bound parameter.
+"app/pipeline/*" = ["S608"]
+"app/services/analytics/*" = ["S608"]
+"app/services/forecasting/series.py" = ["S608"]
+"app/services/simulation/calibration.py" = ["S608"]

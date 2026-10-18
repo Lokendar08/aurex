@@ -1,0 +1,12 @@
+Fonts in this directory
+
+Geist and Geist Mono
+  Copyright 2024 The Geist Project Authors (https://github.com/vercel/geist-font)
+Schibsted Grotesk
+  Copyright 2023 The Schibsted Grotesk Project Authors (https://github.com/schibsted/schibsted-grotesk)
+
+These Font Software files are licensed under the SIL Open Font License, Version 1.1.
+The license text is available at https://openfontlicense.org/open-font-license-official-text/
+and must accompany any redistribution of these files. They are the Unicode-subset WOFF2 files
+served by Google Fonts, stored here unmodified so the application never requests fonts from
+a third party at build or run time.

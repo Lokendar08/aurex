@@ -1,0 +1,40 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Local runtime data (file storage, uploads, generated reports)
+.data/
+
+# Portable development PostgreSQL (binaries + cluster) used by scripts/devdb.py
+.devtools/pg/node_modules/
+.devtools/pgdata/
+.devtools/*.log
+
+# Python
+backend/.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Frontend (see frontend/.gitignore for Next.js specifics)
+frontend/node_modules/
+frontend/.next/
+frontend/playwright-report/
+frontend/test-results/
+frontend/blob-report/
+frontend/e2e/.auth/
+
+# Backups and dumps
+backups/
+*.dump
+*.sql.gz
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

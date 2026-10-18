@@ -1,0 +1,1471 @@
+{
+  "generated_at": "2026-10-18",
+  "method": "Research performed 2026-10-18 using web search, direct fetches of official vendor/retailer pages and PDFs, and a browser for JavaScript-rendered pages. Retailer-vendor associations were checked against the retailer's own filings and infrastructure (annual reports, exchange filings, retailer-hosted portals), the vendor's own website, and then secondary material; user-generated content and unsourced blogs were recorded but never treated as confirmation. Status meanings: verified = confirmed by primary evidence from the retailer and/or vendor; partially_verified = credible indirect evidence or only part of the claim confirmed; unverified = no credible evidence found; contradicted = evidence against. Integration facts for the common systems come only from official vendor documentation pages that loaded during this session (pages that returned HTTP 403 or only a JavaScript shell are noted). 'public_api.available=false' means no public, documented API was found - private or partner-only interfaces may still exist; null means unknown. 'export_formats' lists data formats documented for the API or documented export features; product UI exports were not otherwise verified. Countries are given only where an official page stated them. Nothing was inferred from memory.",
+  "providers": [
+    {
+      "key": "yash_systems_india",
+      "name": "Yash Systems India Pvt. Ltd. (closest match to 'YASH Systems Private Limited')",
+      "legal_name": "YASH SYSTEMS INDIA PRIVATE LIMITED",
+      "categories": [
+        "pos",
+        "inventory"
+      ],
+      "website": null,
+      "country": "IN",
+      "description": "Small private Indian company (CIN U72900MH2005PTC151026, incorporated 4 Feb 2005, ROC Mumbai) with its registered office in Bajaj Nagar, Nagpur, Maharashtra. Registry data classifies it under 'other computer related activities' (NIC 7290); paid-up capital is Rs 1 lakh and the last filed balance sheet shown is for 31 Mar 2023. Directories list it as a software developer for retailers. No product documentation, client list or live company website was found (the domain yashsys.com served only a domain-parking page on 2026-10-18). Categories are inferred from directory listings and are unverified.",
+      "reported_association": {
+        "retailer": "DMart (Avenue Supermarts Ltd)",
+        "claim": "YASH Systems Private Limited is the system/vendor associated with DMart.",
+        "verification_status": "unverified",
+        "finding": "No company registered under the exact name 'YASH Systems Private Limited' was found in the sources we checked (registry aggregators and web search; the MCA portal was not queried directly). The closest match is Yash Systems India Pvt Ltd (Nagpur). It is NOT YASH Technologies Pvt Ltd (Indore-based SAP/IT services firm; no DMart link found) and NOT Yash Systems Manufacturing Co. Pvt Ltd (Pune machinery maker). Only non-authoritative, user-generated or unsourced material links Yash Systems India to DMart: a 2017 Justdial user review, a 2019 directory enquiry, and a January 2026 personal Medium blog that claims DMart stores run a system called 'R-Soft' from Yash Systems with SAP at head office. A primary DMart filing (May 2026) confirms DMart uses SAP ERP (an executive led its 'SAP ERP transformation'), but no DMart filing, press release, vendor case study or job posting names Yash Systems or any POS vendor. Treat as an unconfirmed lead and confirm directly with Avenue Supermarts IT.",
+        "evidence": [
+          {
+            "url": "https://www.zaubacorp.com/YASH-SYSTEMS-INDIA-PRIVATE-LIMITED-U72900MH2005PTC151026",
+            "title": "YASH SYSTEMS INDIA PRIVATE LIMITED | ZaubaCorp",
+            "publisher": "ZaubaCorp (compiled from MCA records)",
+            "accessed": "2026-10-18",
+            "supports": "Registry facts: CIN, incorporation 2005-02-04, ROC Mumbai, Nagpur registered office, NIC 7290, status Active, paid-up capital Rs 1 lakh, last AGM 2023-09-30, last balance sheet 2023-03-31."
+          },
+          {
+            "url": "https://www.justdial.com/Nagpur/Yash-Systems-INDIA-Pvt-Ltd-Opposite-Ciims-Bajaj-Nagar/0712P712STDKM00066_BZDET",
+            "title": "Yash Systems INDIA Pvt Ltd in Bajaj Nagar, Nagpur - Justdial",
+            "publisher": "Justdial",
+            "accessed": "2026-10-18",
+            "supports": "Listed as 'Computer Software Developers For Retailers' (est. 2007). A user review dated 2017-06-28 says DMart software was made by this company; a 2023 review says its website was down. User-generated, unverified."
+          },
+          {
+            "url": "https://hellonagpur.com/Yash-Systems-India-Private-Limited-in-Nagpur/HN9189",
+            "title": "Yash Systems India Private Limited in Nagpur",
+            "publisher": "HelloNagpur (local directory)",
+            "accessed": "2026-10-18",
+            "supports": "Gives website yashsys.com; a visitor enquiry dated 2019-01-03 asks about 'Retailsoft' software seen at DMart. User-generated, unverified."
+          },
+          {
+            "url": "https://medium.com/@rautprajwal36/inside-dmarts-technology-how-india-s-favorite-supermarket-runs-on-smart-systems-31546b6558a2",
+            "title": "Inside DMart's Technology: How India's Favorite Supermarket Runs on Smart Systems",
+            "publisher": "Medium (personal blog post dated 2026-01-09)",
+            "accessed": "2026-10-18",
+            "supports": "Claims DMart stores use 'R-Soft' by Yash Systems India Pvt Ltd (Nagpur) and SAP at head office. Cites no sources and includes illustrative technical detail; not reliable on its own."
+          },
+          {
+            "url": "https://api.dmartindia.com/corporate/content/file/v1/2/jZtJ4gV9JIDY9CjsdXXbQxhE1777722483/Outcome%20of%20the%20Board%20Meeting%20held%20on%20May%202,%202026.pdf",
+            "title": "Avenue Supermarts Ltd - Outcome of the Board Meeting held on May 2, 2026 (Reg. 30 details, page 20)",
+            "publisher": "Avenue Supermarts Ltd (exchange filing)",
+            "accessed": "2026-10-18",
+            "supports": "Primary source: profile of a senior executive says he drove DMart's 'SAP ERP transformation' as VP-Finance (2009-2018). Confirms SAP ERP at DMart; does not name any POS vendor or Yash Systems."
+          }
+        ]
+      },
+      "integration_capabilities": {
+        "public_api": {
+          "available": false,
+          "docs_url": null,
+          "notes": "No public, documented API found as of 2026-10-18; the vendor has no live website. Any interface would be private/custom and would have to be requested through DMart."
+        },
+        "auth_methods": [],
+        "webhooks": {
+          "available": null,
+          "notes": "No documentation found."
+        },
+        "export_formats": [],
+        "database_access": "Unknown. The unsourced blog alleges store servers sync to head-office SAP via batch files; this is unverified. Any data would be DMart-owned and require DMart authorisation.",
+        "partner_program": null,
+        "verification_status": "unverified",
+        "evidence": [
+          {
+            "url": "http://www.yashsys.com/",
+            "title": "yashsys.com (domain check)",
+            "publisher": "n/a",
+            "accessed": "2026-10-18",
+            "supports": "On 2026-10-18 the domain returned only a domain-parking loader script - no company site or API docs."
+          },
+          {
+            "url": "https://www.indiamart.com/yash-systems-india/",
+            "title": "Yash Systems India Pvt. Ltd., Nagpur",
+            "publisher": "IndiaMART",
+            "accessed": "2026-10-18",
+            "supports": "Seller profile lists generic services (software, business solutions, QA, integration testing); no products, clients or API information."
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Confirm with Avenue Supermarts IT which system(s) hold store POS and inventory data (SAP ERP is confirmed; store POS vendor is not).",
+        "Written authorisation and a data-sharing agreement from Avenue Supermarts Ltd (data owner).",
+        "Obtain an extract specification from the actual vendor via DMart (no public API exists to integrate against).",
+        "Agree an extract mechanism - most likely scheduled CSV/XML files over SFTP - plus SFTP credentials and IP allow-listing for AUREX.",
+        "Information-security review and NDA with DMart (and the vendor, if involved)."
+      ],
+      "recommended_connector": "file_export",
+      "notes": "Association unverified. Do not show Yash Systems as 'DMart's system' in the product. Similar names to avoid confusing: YASH Technologies Pvt Ltd (Indore, SAP partner), Yash Computech Solution Pvt Ltd (Indore, 'YES POS'), Yash Systems Manufacturing Co. Pvt Ltd (Pune, machinery)."
+    },
+    {
+      "key": "qube_apps_qubepos",
+      "name": "QubePos / QubeRM (Qube Apps Solutions)",
+      "legal_name": "Qube Apps Solutions Sdn. Bhd.",
+      "categories": [
+        "pos",
+        "inventory",
+        "erp",
+        "crm"
+      ],
+      "website": "https://qubepos.com/",
+      "country": "MY",
+      "description": "Malaysian ICT and software company (company no. 981542-A per the QubePos site; office in Petaling Jaya, Selangor) that sells the QubePos ecosystem: QubeRM (retail POS), CloudBite (F&B POS), QubeERP (cloud ERP portal), self-checkout kiosks, warehouse and transport management, CRM/loyalty, mobile live reporting and LHDN e-invoicing. It also has an Indonesian site and states a Jakarta office opened in 2025.",
+      "reported_association": {
+        "retailer": "MR D.I.Y. (MR D.I.Y. Group (M) Berhad)",
+        "claim": "QubePOS / QubeRM is the system associated with Mr. DIY.",
+        "verification_status": "verified",
+        "finding": "Verified from both sides. (1) MR D.I.Y. Group's own audited Integrated Annual Report 2025 lists Qube Apps Solutions Sdn. Bhd. as a 30% associate (computer consultancy, software development and related trading), shown under 'IT services' in the group structure - Qube is a related party of the retailer. (2) The QubePos website shows an MR DIY client logo and a testimonial attributed to the IT Director of Mr. DIY Group. (3) A 'QubeERP Portal' login page is hosted on MR DIY's own domain and labelled for MR.DIY Indonesia (live). (4) Qube's public help desk references MR DIY practice in e-invoicing (FPOS/ERP Portal) articles. Not confirmed: exactly which modules (QubeRM POS, 'FPOS', QubeERP) run in which countries, and whether other systems coexist (an MR DIY Indonesia job ad also mentions ERP administration 'oracle or equivalent'). Not to be confused with 'Qu POS' (Qubeyond, US) or 'Cube RM' (CPQ software).",
+        "evidence": [
+          {
+            "url": "https://corporate.mrdiy.com/newsroom/MR_D.I.Y._Integrated_Annual_Report_2025_20260427.pdf",
+            "title": "MR D.I.Y. Group (M) Berhad - Integrated Annual Report 2025 (group structure p.11; associates note p.154)",
+            "publisher": "MR D.I.Y. Group (M) Berhad",
+            "accessed": "2026-10-18",
+            "supports": "Qube Apps Solutions Sdn. Bhd. listed as a 30% associate (Malaysia) providing computer consultancy and software development, under 'IT services'."
+          },
+          {
+            "url": "https://qubepos.com/",
+            "title": "Home - QubePos: All-in-one Restaurant & Retail POS System",
+            "publisher": "Qube Apps Solutions Sdn Bhd",
+            "accessed": "2026-10-18",
+            "supports": "QubePos is a registered trademark of Qube Apps Solutions Sdn Bhd (981542-A); QubeRM presented as the retail POS; 'Mr DIY' client logo and testimonial attributed to Mr. DIY Group's IT Director."
+          },
+          {
+            "url": "https://iderp.mrdiy.com/Default.aspx?country=id_diy",
+            "title": "QubeERP Portal (login page)",
+            "publisher": "MR D.I.Y. (own domain)",
+            "accessed": "2026-10-18",
+            "supports": "Login portal branded 'QubeERP Portal' on mrdiy.com, labelled 'MR.DIY-INDONESIA ... LIVE'. Only the page branding was read; no login attempted."
+          },
+          {
+            "url": "https://qubeappshelp.freshdesk.com/support/solutions/folders/60000509276",
+            "title": "E-INVOICE MY : Qube Apps Solutions Sdn Bhd (help-desk folder)",
+            "publisher": "Qube Apps Solutions Sdn Bhd",
+            "accessed": "2026-10-18",
+            "supports": "Public support articles for FPOS / ERP Portal e-invoicing; one notes that MR DIY changed its practice for an issue."
+          },
+          {
+            "url": "https://dealls.com/loker/desktop-and-store-support-it~mr-diy-indonesia",
+            "title": "Desktop & Store Support (IT) - MR.DIY Indonesia (closed job ad)",
+            "publisher": "Dealls (job board)",
+            "accessed": "2026-10-18",
+            "supports": "Duties include 'Application Qube Administrator'."
+          },
+          {
+            "url": "https://dealls.com/en/loker/it-store-support-staff~mr-diy-indonesia",
+            "title": "IT Support Staff (Head Office / Marunda) - MR.DIY Indonesia (closed job ad)",
+            "publisher": "Dealls (job board)",
+            "accessed": "2026-10-18",
+            "supports": "Mentions POS support and basic ERP administration '(oracle or equivalent)'; does not mention Qube."
+          }
+        ]
+      },
+      "integration_capabilities": {
+        "public_api": {
+          "available": false,
+          "docs_url": null,
+          "notes": "No public API reference found on qubepos.com or qubeapps.com. Marketing says the product is 'easy to integrate with third-party systems'; documented integrations are accounting-software posting, integrated payments, shopping-mall sales submission and LHDN e-invoicing. Custom builds and data migration are offered on request."
+        },
+        "auth_methods": [],
+        "webhooks": {
+          "available": null,
+          "notes": "Not documented."
+        },
+        "export_formats": [],
+        "database_access": "Not documented. The POS stores data locally (offline mode) and syncs to a central back office; any database or replica access would need the retailer's and Qube's agreement.",
+        "partner_program": "Sales/reseller partner programme (apply, training and certification, partner manager): https://qubepos.com/become-a-partner/ - not a developer/API programme.",
+        "verification_status": "partially_verified",
+        "evidence": [
+          {
+            "url": "https://qubepos.com/retail-features-summary/",
+            "title": "Retail Features Summary - QubePos",
+            "publisher": "Qube Apps Solutions Sdn Bhd",
+            "accessed": "2026-10-18",
+            "supports": "Integrations tab: accounting software posting, integrated payments, mall management integration; offline mode with later sync; centralised multi-store data. No API docs."
+          },
+          {
+            "url": "https://qubepos.com/faqs/",
+            "title": "FAQs - QubePos",
+            "publisher": "Qube Apps Solutions Sdn Bhd",
+            "accessed": "2026-10-18",
+            "supports": "Data transfer from other software possible 'in most cases'; custom solutions; payment-provider integrations."
+          },
+          {
+            "url": "https://qubepos.com/become-a-partner/",
+            "title": "Become a Partner - QubePos",
+            "publisher": "Qube Apps Solutions Sdn Bhd",
+            "accessed": "2026-10-18",
+            "supports": "Three-step reseller partner programme."
+          },
+          {
+            "url": "https://qubeapps.com/services/software-solutions/erp-software/",
+            "title": "Enterprise Resource Planning Software - Qube Apps Solutions",
+            "publisher": "Qube Apps Solutions Sdn Bhd",
+            "accessed": "2026-10-18",
+            "supports": "QubeERP described as a cloud-based business management system; no API documentation."
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Written authorisation and data-sharing agreement from MR D.I.Y. (data owner). Note Qube is a 30% associate of MR D.I.Y. Group, so any commercial terms may be a related-party matter for the retailer.",
+        "Request an integration specification (API or scheduled export) from Qube Apps Solutions through MR D.I.Y. IT - none is public.",
+        "Agree scope per country instance (Malaysia vs Indonesia) and per module (QubeRM POS / FPOS, QubeERP portal).",
+        "Vendor-issued credentials (API keys or SFTP account) and IP allow-listing for AUREX servers.",
+        "Data-protection review under the applicable local law (e.g. Malaysia PDPA) before any customer-level data is shared."
+      ],
+      "recommended_connector": "file_export",
+      "notes": "Switch to generic_rest if Qube provides an API specification. Distinguish from Qubeyond's 'Qu POS' (US restaurant POS, which has its own partner API)."
+    },
+    {
+      "key": "csquare_ecogreen",
+      "name": "EcoGreen (C-Square Info-Solutions) - candidate for the tentative name 'EcoLite'",
+      "legal_name": "C-Square Info-Solutions Limited",
+      "categories": [
+        "pos",
+        "erp",
+        "inventory"
+      ],
+      "website": "https://www.csquare.in/",
+      "country": "IN",
+      "description": "Indian pharmacy and retail software vendor. Products include EcoGreen (multi-store pharmacy/retail ERP with admin, store/franchise and warehouse modules and interval-based branch synchronisation), EcoGreen Express, EcoGreen Lite (low-cost standalone POS on Jio PC), LiveOrder (B2B ordering), PharmAssist (distribution) and StoreTrack. Its website says it was formed in 2002 and became a subsidiary of Reliance Retail in 2017.",
+      "reported_association": {
+        "retailer": "Wellness Forever (Wellness Forever Medicare Limited)",
+        "claim": "'EcoLite' (tentative name) is the system associated with Wellness Forever.",
+        "verification_status": "partially_verified",
+        "finding": "No product called 'EcoLite' was found. The closest match is C-Square's EcoGreen family; 'EcoGreen Lite' is a single-store POS, so a 375-450-store chain would more plausibly use the multi-store EcoGreen ERP. Indirect evidence links Wellness Forever to C-Square: (1) a student field report on a Wellness Forever store (Pune, c.2014-2017) says stock was kept on 'ECOGREEN' software with nightly transfer to head office; (2) Wellness Forever's official Android app uses package id com.c2info.wellnessforever - the same 'com.c2info.' namespace used by apps published by C-Square Info-Solutions Limited, consistent with C-Square having built it. Neither company has publicly confirmed which POS/ERP Wellness Forever runs today. Wellness Forever separately uses Blue Yonder category-management software (vendor customer story).",
+        "evidence": [
+          {
+            "url": "https://play.google.com/store/apps/details?id=com.c2info.wellnessforever&hl=en_IN",
+            "title": "Wellness Forever - Apps on Google Play",
+            "publisher": "Google Play (developer 'Wellness')",
+            "accessed": "2026-10-18",
+            "supports": "Official Wellness Forever app (support email at wellnessforever.in) with package id com.c2info.wellnessforever."
+          },
+          {
+            "url": "https://play.google.com/store/search?q=C-Square%20Info%20Solutions&c=apps",
+            "title": "C-Square Info Solutions - Android Apps on Google Play",
+            "publisher": "Google Play",
+            "accessed": "2026-10-18",
+            "supports": "Apps by 'C-Square Info-Solutions Limited' use the 'com.c2info.' package prefix (e.g. com.c2info.liveconnect.productlist)."
+          },
+          {
+            "url": "https://www.slideshare.net/slideshow/storekeeping-79944007/79944007",
+            "title": "Storekeeping (student project on a Wellness Forever store, Shivajinagar, Pune)",
+            "publisher": "SlideShare (student M.Com project)",
+            "accessed": "2026-10-18",
+            "supports": "States stock was maintained on ECOGREEN software with automatic early-morning transfer to head office. Old and non-authoritative."
+          },
+          {
+            "url": "https://www.csquare.in/ecogreen-lite/",
+            "title": "India's Most Affordable POS Software Solution (EcoGreen Lite)",
+            "publisher": "C-Square",
+            "accessed": "2026-10-18",
+            "supports": "EcoGreen Lite is a standalone POS (Jio PC, offline capable, Azure cloud storage, Excel report export)."
+          },
+          {
+            "url": "https://zh.blueyonder.com/resources/wellness-forever-digitally-transforms-category-management",
+            "title": "Wellness Forever Digitally Transforms Category Management (customer story)",
+            "publisher": "Blue Yonder",
+            "accessed": "2026-10-18",
+            "supports": "Wellness Forever (350+ stores at the time) uses Blue Yonder for category management/planograms - a separate system; page undated."
+          }
+        ]
+      },
+      "integration_capabilities": {
+        "public_api": {
+          "available": false,
+          "docs_url": null,
+          "notes": "No public API reference. The EcoGreen page FAQ states that 'C-Square ERP supports API integration' and that custom APIs can be developed (online orders via APIs; Paytm and Razorpay payment gateways). Access terms are not published."
+        },
+        "auth_methods": [],
+        "webhooks": {
+          "available": null,
+          "notes": "Not documented."
+        },
+        "export_formats": [
+          "xlsx"
+        ],
+        "database_access": "Not documented. EcoGreen keeps transactions at the branch and synchronises them to the central Admin module at set intervals; database-level access would need the retailer's and C-Square's agreement.",
+        "partner_program": "Channel partner programme (Master Channel Partner, Certified Channel Partner, Referral Partner): https://www.csquare.in/channel-partner/ - a sales channel programme, not a developer/API programme.",
+        "verification_status": "partially_verified",
+        "evidence": [
+          {
+            "url": "https://www.csquare.in/ecogreen/",
+            "title": "EcoGreen - C-Square",
+            "publisher": "C-Square",
+            "accessed": "2026-10-18",
+            "supports": "Multi-chain ERP modules; interval-based internet synchronisation; FAQ: API integration supported / custom APIs on request."
+          },
+          {
+            "url": "https://www.csquare.in/ecogreen-lite/",
+            "title": "EcoGreen Lite",
+            "publisher": "C-Square",
+            "accessed": "2026-10-18",
+            "supports": "Reports exportable to Excel (documented for EcoGreen Lite only - hence 'xlsx')."
+          },
+          {
+            "url": "https://www.csquare.in/",
+            "title": "Software Solutions for Profits, Growth, and Efficiency",
+            "publisher": "C-Square",
+            "accessed": "2026-10-18",
+            "supports": "Product family and channel-partner tiers."
+          },
+          {
+            "url": "https://www.csquare.in/about-us/",
+            "title": "About Us - C-Square",
+            "publisher": "C-Square",
+            "accessed": "2026-10-18",
+            "supports": "Formed 2002; 'became a subsidiary of Reliance Retail' in 2017."
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Confirm with Wellness Forever IT which POS/ERP currently runs its stores (EcoGreen is likely but not confirmed).",
+        "Written authorisation and data-sharing agreement from Wellness Forever Medicare Ltd; pharmacy data can include prescription/health information, so restrict to aggregated sales/inventory unless explicitly approved.",
+        "Request an API or scheduled export from C-Square through Wellness Forever - nothing is public.",
+        "Legal review of data flows, noting C-Square states it is a Reliance Retail subsidiary (a competitor in pharmacy retail).",
+        "Compliance check under India's Digital Personal Data Protection Act, 2023 for any personal data; SFTP/API credentials and IP allow-listing."
+      ],
+      "recommended_connector": "file_export",
+      "notes": "'EcoLite' itself is unverified; the record describes the most plausible match. Update once the retailer confirms its system."
+    },
+    {
+      "key": "shopify",
+      "name": "Shopify (Admin API + POS)",
+      "legal_name": null,
+      "categories": [
+        "pos",
+        "inventory"
+      ],
+      "website": "https://www.shopify.com/",
+      "country": null,
+      "description": "Commerce platform with online store and POS. Admin data is exposed through the GraphQL Admin API (REST Admin API is legacy).",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://shopify.dev/docs/api/admin-graphql",
+          "notes": "Rate limits: GraphQL Admin cost limits per app per store: Standard 100 points/s, Advanced 200, Plus 1000, Commerce Components 2000; single query max 1,000 points (https://shopify.dev/docs/apps/build/apis/graphql-admin/rate-limits)."
+        },
+        "auth_methods": [
+          "oauth2",
+          "access_token"
+        ],
+        "webhooks": {
+          "available": true,
+          "notes": "Webhook topics delivered to HTTPS, Google Pub/Sub or Amazon EventBridge; verify via X-Shopify-Hmac-Sha256 (https://shopify.dev/docs/apps/build/webhooks)."
+        },
+        "export_formats": [],
+        "database_access": null,
+        "partner_program": "https://www.shopify.com/partners",
+        "verification_status": "verified",
+        "evidence": [
+          {
+            "url": "https://shopify.dev/docs/api/admin-graphql",
+            "title": "GraphQL Admin API reference",
+            "publisher": "Shopify",
+            "accessed": "2026-10-18",
+            "supports": "Access-token header; OAuth install flow"
+          },
+          {
+            "url": "https://shopify.dev/docs/apps/build/apis/graphql-admin/rate-limits",
+            "title": "GraphQL Admin API rate limits",
+            "publisher": "Shopify",
+            "accessed": "2026-10-18",
+            "supports": "Points-per-second limits by plan"
+          },
+          {
+            "url": "https://shopify.dev/docs/api/admin-rest",
+            "title": "REST Admin API reference",
+            "publisher": "Shopify",
+            "accessed": "2026-10-18",
+            "supports": "REST is legacy; new public apps must use GraphQL from 2025-04-01"
+          },
+          {
+            "url": "https://shopify.dev/docs/api/pos-ui-extensions",
+            "title": "POS UI extensions",
+            "publisher": "Shopify",
+            "accessed": "2026-10-18",
+            "supports": "POS extensions can call the GraphQL Admin API"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer admin authorises the AUREX app via the vendor's OAuth consent flow with read-only scopes.",
+        "Confirm the customer's plan/edition includes API access.",
+        "Register AUREX callback URLs and (if used) webhook endpoints with the vendor.",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "oauth_rest",
+      "notes": "REST Admin API legacy since 2024-10-01; new public apps GraphQL-only from 2025-04-01. REST rate limits not checked."
+    },
+    {
+      "key": "square",
+      "name": "Square",
+      "legal_name": "Block, Inc.",
+      "categories": [
+        "pos",
+        "inventory"
+      ],
+      "website": "https://squareup.com/",
+      "country": null,
+      "description": "POS and payments platform with REST APIs (v2) for orders, catalog, inventory, customers and payments.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://developer.squareup.com/docs/build-basics/using-rest-api",
+          "notes": "Rate limits: No numeric limits published; 429 RATE_LIMITED with advice to back off (https://developer.squareup.com/docs/build-basics/general-considerations/handling-errors)."
+        },
+        "auth_methods": [
+          "oauth2",
+          "personal_access_token"
+        ],
+        "webhooks": {
+          "available": true,
+          "notes": "Event notifications signed with x-square-hmacsha256-signature; retries with backoff up to 24 h; may repeat/arrive out of order (https://developer.squareup.com/docs/webhooks/overview)."
+        },
+        "export_formats": [
+          "json"
+        ],
+        "database_access": null,
+        "partner_program": "https://squareup.com/us/en/partnerships",
+        "verification_status": "verified",
+        "evidence": [
+          {
+            "url": "https://developer.squareup.com/docs/build-basics/using-rest-api",
+            "title": "Using the REST API",
+            "publisher": "Square (Block, Inc.)",
+            "accessed": "2026-10-18",
+            "supports": "v2 base URLs, Bearer auth, JSON"
+          },
+          {
+            "url": "https://developer.squareup.com/docs/build-basics/access-tokens",
+            "title": "Access Tokens and Other Square Credentials",
+            "publisher": "Square (Block, Inc.)",
+            "accessed": "2026-10-18",
+            "supports": "Personal and OAuth access tokens"
+          },
+          {
+            "url": "https://developer.squareup.com/docs/webhooks/overview",
+            "title": "Square Webhooks",
+            "publisher": "Square (Block, Inc.)",
+            "accessed": "2026-10-18",
+            "supports": "Webhook delivery and retries"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer admin authorises the AUREX app via the vendor's OAuth consent flow with read-only scopes.",
+        "Confirm the customer's plan/edition includes API access.",
+        "Register AUREX callback URLs and (if used) webhook endpoints with the vendor.",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "oauth_rest",
+      "notes": "Production base https://connect.squareup.com/v2; sandbox https://connect.squareupsandbox.com/v2."
+    },
+    {
+      "key": "lightspeed_retail",
+      "name": "Lightspeed Retail (X-Series; R-Series partly)",
+      "legal_name": null,
+      "categories": [
+        "pos",
+        "inventory"
+      ],
+      "website": "https://www.lightspeedhq.com/",
+      "country": null,
+      "description": "Retail POS. X-Series (ex-Vend) has a JSON-over-HTTP API; R-Series has a separate REST API (XML or JSON, OAuth2).",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://x-series-api.lightspeedhq.com/docs/introduction",
+          "notes": "Rate limits: X-Series default: 300 x (number of registers) + 50 requests per 5-minute window; 429 with Retry-After (https://x-series-api.lightspeedhq.com/docs/rate_limiting)."
+        },
+        "auth_methods": [
+          "oauth2",
+          "personal_token"
+        ],
+        "webhooks": {
+          "available": true,
+          "notes": "X-Series webhooks for product, inventory, consignment, sale, customer and register-closure events; signed for OAuth apps; up to 20 retries over 48 h; delivery not guaranteed (https://x-series-api.lightspeedhq.com/docs/webhooks)."
+        },
+        "export_formats": [
+          "json"
+        ],
+        "database_access": null,
+        "partner_program": null,
+        "verification_status": "partially_verified",
+        "evidence": [
+          {
+            "url": "https://x-series-api.lightspeedhq.com/docs/introduction",
+            "title": "Introduction to the Lightspeed Retail (X-Series) API",
+            "publisher": "Lightspeed",
+            "accessed": "2026-10-18",
+            "supports": "JSON over HTTP"
+          },
+          {
+            "url": "https://x-series-api.lightspeedhq.com/docs/authorization",
+            "title": "Authorization",
+            "publisher": "Lightspeed",
+            "accessed": "2026-10-18",
+            "supports": "OAuth 2.0 and personal tokens"
+          },
+          {
+            "url": "https://x-series-api.lightspeedhq.com/docs/rate_limiting",
+            "title": "Rate Limiting",
+            "publisher": "Lightspeed",
+            "accessed": "2026-10-18",
+            "supports": "Rate-limit formula"
+          },
+          {
+            "url": "https://retail-support.lightspeedhq.com/hc/en-us/articles/229129268-Integrating-with-the-Lightspeed-Retail-POS-R-Series-API",
+            "title": "Integrating with the Lightspeed Retail POS (R-Series) API",
+            "publisher": "Lightspeed",
+            "accessed": "2026-10-18",
+            "supports": "R-Series REST API, XML/JSON, OAuth2"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer admin authorises the AUREX app via the vendor's OAuth consent flow with read-only scopes.",
+        "Confirm the customer's plan/edition includes API access.",
+        "Register AUREX callback URLs and (if used) webhook endpoints with the vendor.",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "oauth_rest",
+      "notes": "R-Series developer docs and lightspeedhq.com returned HTTP 403 to our tools; R-Series limits unverified. X-Series personal tokens require the Plus plan."
+    },
+    {
+      "key": "odoo",
+      "name": "Odoo",
+      "legal_name": null,
+      "categories": [
+        "erp",
+        "inventory",
+        "accounting",
+        "crm"
+      ],
+      "website": "https://www.odoo.com/",
+      "country": null,
+      "description": "Open-core ERP suite. External JSON-2 API (Odoo 19) with API keys; legacy XML-RPC/JSON-RPC scheduled for removal.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://www.odoo.com/documentation/19.0/developer/reference/external_api.html",
+          "notes": "No rate limits documented on the official pages reviewed."
+        },
+        "auth_methods": [
+          "api_key"
+        ],
+        "webhooks": {
+          "available": true,
+          "notes": "Studio automations support incoming 'On webhook' triggers and outgoing webhook actions (https://www.odoo.com/documentation/19.0/applications/studio/automated_actions/webhooks.html)."
+        },
+        "export_formats": [
+          "json",
+          "xml"
+        ],
+        "database_access": null,
+        "partner_program": "https://www.odoo.com/become-a-partner",
+        "verification_status": "verified",
+        "evidence": [
+          {
+            "url": "https://www.odoo.com/documentation/19.0/developer/reference/external_api.html",
+            "title": "External JSON-2 API - Odoo 19.0 documentation",
+            "publisher": "Odoo",
+            "accessed": "2026-10-18",
+            "supports": "Bearer API key; RPC deprecation; plan restriction"
+          },
+          {
+            "url": "https://www.odoo.com/documentation/19.0/applications/studio/automated_actions/webhooks.html",
+            "title": "Webhooks - Odoo 19.0 documentation",
+            "publisher": "Odoo",
+            "accessed": "2026-10-18",
+            "supports": "Incoming/outgoing webhooks"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer generates an API key/credential for a least-privilege integration user.",
+        "Network access to the endpoint (public URL, or VPN/on-prem gateway with IP allow-listing for self-hosted systems).",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "generic_rest",
+      "notes": "Per Odoo docs, external API access on Odoo Online requires a Custom plan; XML-RPC/JSON-RPC removal planned (Odoo 22 / Online 21.1). No rate limits documented."
+    },
+    {
+      "key": "sap_business_one",
+      "name": "SAP Business One (Service Layer)",
+      "legal_name": null,
+      "categories": [
+        "erp",
+        "inventory",
+        "accounting"
+      ],
+      "website": "https://www.sap.com/products/erp/business-one.html",
+      "country": null,
+      "description": "SME ERP. The Service Layer exposes OData (V4 primary) over HTTPS, typically hosted on the customer's or partner's server.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html",
+          "notes": "No rate limits documented on the official pages reviewed."
+        },
+        "auth_methods": [
+          "session_login"
+        ],
+        "webhooks": {
+          "available": null,
+          "notes": "No webhook/event-push feature found in the Service Layer pages reviewed."
+        },
+        "export_formats": [],
+        "database_access": null,
+        "partner_program": null,
+        "verification_status": "partially_verified",
+        "evidence": [
+          {
+            "url": "https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html",
+            "title": "Service Layer API Reference",
+            "publisher": "SAP",
+            "accessed": "2026-10-18",
+            "supports": "OData V4 primary; /b1s/v2 paths"
+          },
+          {
+            "url": "https://learning.sap.com/courses/leveraging-the-sap-business-one-service-layer/logging-in-and-logging-out-using-service-layer-api",
+            "title": "Logging In and Out Using Basic Authentication with Service Layer API",
+            "publisher": "SAP",
+            "accessed": "2026-10-18",
+            "supports": "POST /b1s/v2/Login with CompanyDB, UserName, Password returns session cookies"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer generates an API key/credential for a least-privilege integration user.",
+        "Network access to the endpoint (public URL, or VPN/on-prem gateway with IP allow-listing for self-hosted systems).",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "generic_rest",
+      "notes": "sap.com product and partner pages returned HTTP 403 to our tools. Usually requires network access to the customer's Service Layer host (VPN/allow-listing)."
+    },
+    {
+      "key": "dynamics_365_business_central",
+      "name": "Microsoft Dynamics 365 Business Central (API v2.0)",
+      "legal_name": null,
+      "categories": [
+        "erp",
+        "accounting",
+        "inventory"
+      ],
+      "website": "https://www.microsoft.com/en-us/dynamics-365/products/business-central",
+      "country": null,
+      "description": "SME ERP with REST/OData API v2.0; online tenants use Microsoft Entra ID OAuth.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/",
+          "notes": "Rate limits: Online OData per user: 6,000 requests per 5-minute sliding window, 5 concurrent; max page size 20,000; $batch max 100 operations (https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/operational-limits-online)."
+        },
+        "auth_methods": [
+          "oauth2"
+        ],
+        "webhooks": {
+          "available": true,
+          "notes": "Subscriptions via POST /api/v2.0/subscriptions with validation handshake; expire after 3 days unless renewed; retries over 36 h (https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/dynamics-subscriptions)."
+        },
+        "export_formats": [
+          "json"
+        ],
+        "database_access": null,
+        "partner_program": "https://learn.microsoft.com/en-us/partner-center/membership/intro-to-cloud-partner-program-membership",
+        "verification_status": "verified",
+        "evidence": [
+          {
+            "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/dynamics-subscriptions",
+            "title": "Working with webhooks - Business Central",
+            "publisher": "Microsoft",
+            "accessed": "2026-10-18",
+            "supports": "Webhook subscriptions"
+          },
+          {
+            "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/operational-limits-online",
+            "title": "Operation Limits in Dynamics 365 Business Central",
+            "publisher": "Microsoft",
+            "accessed": "2026-10-18",
+            "supports": "OData limits"
+          },
+          {
+            "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/authenticate-web-services-using-oauth",
+            "title": "Using OAuth to authenticate Business Central Web Services",
+            "publisher": "Microsoft",
+            "accessed": "2026-10-18",
+            "supports": "Entra OAuth incl. client credentials"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer admin authorises the AUREX app via the vendor's OAuth consent flow with read-only scopes.",
+        "Confirm the customer's plan/edition includes API access.",
+        "Register AUREX callback URLs and (if used) webhook endpoints with the vendor.",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "oauth_rest",
+      "notes": "On-premises deployments must enable APIs and may use BC credentials/web access keys."
+    },
+    {
+      "key": "oracle_netsuite",
+      "name": "Oracle NetSuite (SuiteTalk REST/SOAP, RESTlets)",
+      "legal_name": null,
+      "categories": [
+        "erp",
+        "accounting",
+        "inventory",
+        "crm"
+      ],
+      "website": "https://www.netsuite.com/",
+      "country": null,
+      "description": "Cloud ERP with REST web services (JSON), SOAP web services and custom RESTlets.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1544786256.html",
+          "notes": "Rate limits: Account concurrency limits (web services + RESTlets combined): Standard 5, Premium 15, Enterprise 20, Ultimate 20; +10 per SuiteCloud Plus licence (https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/bridgehead_1500275603.html)."
+        },
+        "auth_methods": [
+          "oauth2",
+          "token_based_auth"
+        ],
+        "webhooks": {
+          "available": null,
+          "notes": "Not established from the integration pages reviewed."
+        },
+        "export_formats": [
+          "json",
+          "xml"
+        ],
+        "database_access": null,
+        "partner_program": null,
+        "verification_status": "partially_verified",
+        "evidence": [
+          {
+            "url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1544786256.html",
+            "title": "REST Web Services and Other Integration Options",
+            "publisher": "Oracle",
+            "accessed": "2026-10-18",
+            "supports": "REST, SOAP, RESTlets"
+          },
+          {
+            "url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157780312610.html",
+            "title": "OAuth 2.0 for REST Web Services",
+            "publisher": "Oracle",
+            "accessed": "2026-10-18",
+            "supports": "OAuth 2.0 for REST and RESTlets"
+          },
+          {
+            "url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4381113277.html",
+            "title": "Token-based Authentication and Web Services",
+            "publisher": "Oracle",
+            "accessed": "2026-10-18",
+            "supports": "TBA phase-out for new integrations from 2027.1"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer admin authorises the AUREX app via the vendor's OAuth consent flow with read-only scopes.",
+        "Confirm the customer's plan/edition includes API access.",
+        "Register AUREX callback URLs and (if used) webhook endpoints with the vendor.",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "oauth_rest",
+      "notes": "SOAP does not support OAuth 2.0; Oracle says no new TBA integrations can be created from release 2027.1. netsuite.com returned HTTP 403 to our tools."
+    },
+    {
+      "key": "tallyprime",
+      "name": "TallyPrime",
+      "legal_name": "Tally Solutions Private Limited",
+      "categories": [
+        "accounting",
+        "inventory"
+      ],
+      "website": "https://tallysolutions.com/",
+      "country": "IN",
+      "description": "Widely used Indian accounting/inventory software, usually installed on-premises. Integration is via XML/JSON over HTTP to a running TallyPrime instance, ODBC, TDL or files.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://help.tallysolutions.com/integration-methods-and-technologies/",
+          "notes": "No rate limits documented on the official pages reviewed."
+        },
+        "auth_methods": [],
+        "webhooks": {
+          "available": null,
+          "notes": "No webhooks documented; TDL can make outbound HTTP calls."
+        },
+        "export_formats": [
+          "xml",
+          "json"
+        ],
+        "database_access": null,
+        "partner_program": "https://tallysolutions.com/global/partner-with-us/",
+        "verification_status": "partially_verified",
+        "evidence": [
+          {
+            "url": "https://help.tallysolutions.com/xml-integration/",
+            "title": "XML Integration | TallyHelp",
+            "publisher": "Tally Solutions",
+            "accessed": "2026-10-18",
+            "supports": "XML over HTTP to the TallyPrime HTTP server (default port 9000)"
+          },
+          {
+            "url": "https://help.tallysolutions.com/integration-methods-and-technologies/",
+            "title": "Integration Methods and Technologies | TallyHelp",
+            "publisher": "Tally Solutions",
+            "accessed": "2026-10-18",
+            "supports": "TDL, JSON/XML over HTTP or file, ODBC"
+          },
+          {
+            "url": "https://tallysolutions.com/global/partner-with-us/",
+            "title": "Tally Certified Partners - Tally Solutions",
+            "publisher": "Tally Solutions",
+            "accessed": "2026-10-18",
+            "supports": "Partner network; legal name in footer"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer generates an API key/credential for a least-privilege integration user.",
+        "Network access to the endpoint (public URL, or VPN/on-prem gateway with IP allow-listing for self-hosted systems).",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "generic_rest",
+      "notes": "No authentication method described for the local HTTP server; no cloud endpoint documented. Needs an on-premises agent/gateway on the customer's network."
+    },
+    {
+      "key": "zoho_inventory",
+      "name": "Zoho Inventory",
+      "legal_name": null,
+      "categories": [
+        "inventory"
+      ],
+      "website": "https://www.zoho.com/inventory/",
+      "country": null,
+      "description": "Cloud inventory and order management with a REST API per data centre.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://www.zoho.com/inventory/api/v1/introduction/",
+          "notes": "Rate limits: 100 requests/min per organisation; daily caps by plan (Free 1,000; Standard 2,000; Professional 5,000; Premium/Enterprise 10,000) (https://www.zoho.com/inventory/api/v1/introduction/)."
+        },
+        "auth_methods": [
+          "oauth2"
+        ],
+        "webhooks": {
+          "available": true,
+          "notes": "Outgoing webhooks from workflow rules on selected plans; alerts capped at 500/day (https://www.zoho.com/us/inventory/help/settings/automation.html)."
+        },
+        "export_formats": [
+          "json"
+        ],
+        "database_access": null,
+        "partner_program": "https://www.zoho.com/partners/",
+        "verification_status": "verified",
+        "evidence": [
+          {
+            "url": "https://www.zoho.com/inventory/api/v1/introduction/",
+            "title": "Introduction | Zoho Inventory | API Documentation",
+            "publisher": "Zoho",
+            "accessed": "2026-10-18",
+            "supports": "Base URIs and limits"
+          },
+          {
+            "url": "https://www.zoho.com/inventory/api/v1/oauth/",
+            "title": "OAuth | Zoho Inventory | API Documentation",
+            "publisher": "Zoho",
+            "accessed": "2026-10-18",
+            "supports": "OAuth 2.0; Zoho-oauthtoken header"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer admin authorises the AUREX app via the vendor's OAuth consent flow with read-only scopes.",
+        "Confirm the customer's plan/edition includes API access.",
+        "Register AUREX callback URLs and (if used) webhook endpoints with the vendor.",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "oauth_rest",
+      "notes": ""
+    },
+    {
+      "key": "zoho_books",
+      "name": "Zoho Books",
+      "legal_name": null,
+      "categories": [
+        "accounting"
+      ],
+      "website": "https://www.zoho.com/books/",
+      "country": null,
+      "description": "Cloud accounting with REST API v3 across regional data centres (including .sa and .ae).",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://www.zoho.com/books/api/v3/introduction/",
+          "notes": "Rate limits: 100 requests/min per organisation; daily caps by plan (Free 1,000 ... Elite/Ultimate 10,000) (https://www.zoho.com/books/api/v3/introduction/)."
+        },
+        "auth_methods": [
+          "oauth2"
+        ],
+        "webhooks": {
+          "available": true,
+          "notes": "Workflow-rule webhooks; optional HMAC-SHA256 signature (X-Zoho-Webhook-Signature); configurable retries (https://www.zoho.com/bh/books/help/settings/automation/workflow-actions/webhooks.html)."
+        },
+        "export_formats": [
+          "json"
+        ],
+        "database_access": null,
+        "partner_program": "https://www.zoho.com/partners/",
+        "verification_status": "verified",
+        "evidence": [
+          {
+            "url": "https://www.zoho.com/books/api/v3/introduction/",
+            "title": "Introduction | Zoho Books | API Documentation",
+            "publisher": "Zoho",
+            "accessed": "2026-10-18",
+            "supports": "Domains and limits"
+          },
+          {
+            "url": "https://www.zoho.com/books/api/v3/oauth/",
+            "title": "OAuth | Zoho Books | API Documentation",
+            "publisher": "Zoho",
+            "accessed": "2026-10-18",
+            "supports": "OAuth 2.0, 1-hour access tokens"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer admin authorises the AUREX app via the vendor's OAuth consent flow with read-only scopes.",
+        "Confirm the customer's plan/edition includes API access.",
+        "Register AUREX callback URLs and (if used) webhook endpoints with the vendor.",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "oauth_rest",
+      "notes": ""
+    },
+    {
+      "key": "quickbooks_online",
+      "name": "QuickBooks Online (Intuit Accounting API)",
+      "legal_name": "Intuit Inc.",
+      "categories": [
+        "accounting"
+      ],
+      "website": "https://quickbooks.intuit.com/",
+      "country": null,
+      "description": "Cloud accounting with the QuickBooks Online Accounting API (OAuth 2.0).",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://static.developer.intuit.com/output_html/qbo/docs/learn/limits-and-throttles.html",
+          "notes": "Rate limits: 500 requests/min per realm; 10 requests/s per realm and app; batch 40/min per realm and app; 429 means wait 60 s (https://static.developer.intuit.com/output_html/qbo/docs/learn/limits-and-throttles.html)."
+        },
+        "auth_methods": [
+          "oauth2"
+        ],
+        "webhooks": {
+          "available": true,
+          "notes": "Signed event notifications (intuit-signature HMAC-SHA256) for OAuth-connected companies (https://static.developer.intuit.com/output_html/qbo/docs/develop/webhooks/configure-webhooks.html)."
+        },
+        "export_formats": [
+          "json"
+        ],
+        "database_access": null,
+        "partner_program": "https://developer.intuit.com/partners",
+        "verification_status": "verified",
+        "evidence": [
+          {
+            "url": "https://static.developer.intuit.com/output_html/qbo/docs/learn/limits-and-throttles.html",
+            "title": "API call limits and throttles",
+            "publisher": "Intuit",
+            "accessed": "2026-10-18",
+            "supports": "Throttle numbers"
+          },
+          {
+            "url": "https://static.developer.intuit.com/output_html/qbo/docs/develop/webhooks/configure-webhooks.html",
+            "title": "Configure webhooks",
+            "publisher": "Intuit",
+            "accessed": "2026-10-18",
+            "supports": "Webhooks; OAuth 2.0 required"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer admin authorises the AUREX app via the vendor's OAuth consent flow with read-only scopes.",
+        "Confirm the customer's plan/edition includes API access.",
+        "Register AUREX callback URLs and (if used) webhook endpoints with the vendor.",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "oauth_rest",
+      "notes": "Verified on Intuit's static docs host (developer.intuit.com rendered only a page shell). Intuit's App Partner Program (2025) introduced usage-based API fees in the US."
+    },
+    {
+      "key": "xero",
+      "name": "Xero (Accounting API)",
+      "legal_name": "Xero Limited",
+      "categories": [
+        "accounting"
+      ],
+      "website": "https://www.xero.com/",
+      "country": null,
+      "description": "Cloud accounting with an OAuth 2.0 Accounting API.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://developer.xero.com/documentation/api/accounting/overview",
+          "notes": "Rate limits: Per tenant: 5 concurrent calls, 60 calls/min, 5,000 calls/day; app-wide 10,000/min; 429 when exceeded (https://developer.xero.com/faq/limits)."
+        },
+        "auth_methods": [
+          "oauth2"
+        ],
+        "webhooks": {
+          "available": true,
+          "notes": "Xero offers webhooks (e.g. prepayments webhooks share the standard configuration); signing details not verified because the guide rendered only a page shell."
+        },
+        "export_formats": [],
+        "database_access": null,
+        "partner_program": "https://developer.xero.com/documentation/xero-app-store/app-partner-guides/app-partner-features/",
+        "verification_status": "partially_verified",
+        "evidence": [
+          {
+            "url": "https://developer.xero.com/faq/limits",
+            "title": "Limits FAQs - Xero Developer",
+            "publisher": "Xero",
+            "accessed": "2026-10-18",
+            "supports": "Rate limits"
+          },
+          {
+            "url": "https://developer.xero.com/faq/oauth2",
+            "title": "OAuth 2.0 FAQs - Xero Developer",
+            "publisher": "Xero",
+            "accessed": "2026-10-18",
+            "supports": "Access token 30 min; refresh token expiry 60 days if unused"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer admin authorises the AUREX app via the vendor's OAuth consent flow with read-only scopes.",
+        "Confirm the customer's plan/edition includes API access.",
+        "Register AUREX callback URLs and (if used) webhook endpoints with the vendor.",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "oauth_rest",
+      "notes": "Daily limits may now be tier-based on Xero's newer pages; not confirmed."
+    },
+    {
+      "key": "gofrugal",
+      "name": "Gofrugal",
+      "legal_name": "Zoho Corporation Pvt. Ltd. (per gofrugal.com copyright line)",
+      "categories": [
+        "pos",
+        "erp",
+        "inventory"
+      ],
+      "website": "https://www.gofrugal.com/",
+      "country": null,
+      "description": "Indian retail/restaurant POS and ERP. Publishes an e-commerce integration API (items, sales orders) served from the customer's POS server.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://community.gofrugal.com/portal/en/kb/articles/api-integration",
+          "notes": "No rate limits documented on the official pages reviewed."
+        },
+        "auth_methods": [
+          "api_key"
+        ],
+        "webhooks": {
+          "available": null,
+          "notes": "No webhooks documented."
+        },
+        "export_formats": [
+          "json"
+        ],
+        "database_access": null,
+        "partner_program": "https://www.gofrugal.com/partner-signup.html",
+        "verification_status": "partially_verified",
+        "evidence": [
+          {
+            "url": "https://community.gofrugal.com/portal/en/kb/articles/api-integration",
+            "title": "Overview of API Integration",
+            "publisher": "Gofrugal",
+            "accessed": "2026-10-18",
+            "supports": "Item and sales-order APIs for online-store sync"
+          },
+          {
+            "url": "https://community.gofrugal.com/portal/en/kb/gofrugalretaileasy/ecommerce-integration/api-integration/articles/list-all-items",
+            "title": "API to List all Items",
+            "publisher": "Gofrugal",
+            "accessed": "2026-10-18",
+            "supports": "Example GET .../WebReporter/api/v1/items with X-Auth-Token header (local server)"
+          },
+          {
+            "url": "https://www.gofrugal.com/integration-pos.html",
+            "title": "Gofrugal integrations",
+            "publisher": "Gofrugal",
+            "accessed": "2026-10-18",
+            "supports": "'Ecommerce Open API'; Tally/Shopify/WooCommerce integrations"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer generates an API key/credential for a least-privilege integration user.",
+        "Network access to the endpoint (public URL, or VPN/on-prem gateway with IP allow-listing for self-hosted systems).",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "generic_rest",
+      "notes": "Only the e-commerce integration API is documented; examples point to a local POS server; key issuance not documented."
+    },
+    {
+      "key": "ginesys",
+      "name": "Ginesys (Ginesys One)",
+      "legal_name": "Ginni Systems Limited",
+      "categories": [
+        "erp",
+        "pos"
+      ],
+      "website": "https://www.ginesys.in/",
+      "country": null,
+      "description": "Indian retail ERP/POS suite. The vendor states APIs exist, but no public API reference was found.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": false,
+          "docs_url": null,
+          "notes": "No rate limits documented on the official pages reviewed."
+        },
+        "auth_methods": [],
+        "webhooks": {
+          "available": null,
+          "notes": "Not mentioned on pages reviewed."
+        },
+        "export_formats": [],
+        "database_access": null,
+        "partner_program": "https://www.ginesys.in/partnership",
+        "verification_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://www.ginesys.in/products/erp-pos-integrations",
+            "title": "Ginesys ERP & POS Integrations",
+            "publisher": "Ginesys",
+            "accessed": "2026-10-18",
+            "supports": "'APIs for all possible scenarios'; integration list"
+          },
+          {
+            "url": "https://www.ginesys.in/technology",
+            "title": "Cloud-Native Retail Platform with AI and BI | Ginesys One Technology",
+            "publisher": "Ginesys",
+            "accessed": "2026-10-18",
+            "supports": "Integration 'through APIs and managed integration services'"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer or vendor configures scheduled exports (CSV/XLSX) to an AUREX SFTP drop or uploads manually.",
+        "Agree file layouts and schedule; SFTP credentials and IP allow-listing.",
+        "Data-sharing agreement / DPA covering the files."
+      ],
+      "recommended_connector": "file_export",
+      "notes": "No public API documentation, authentication, webhook or rate-limit details found; API access terms not published."
+    },
+    {
+      "key": "ls_central",
+      "name": "LS Retail LS Central",
+      "legal_name": "LS Retail ehf.",
+      "categories": [
+        "pos",
+        "erp",
+        "inventory"
+      ],
+      "website": "https://www.lsretail.com/",
+      "country": null,
+      "description": "Retail/hospitality POS and ERP built on Microsoft Dynamics 365 Business Central; web services use the Business Central web-service layer.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://help.lscentral.lsretail.com/Content/LS-Retail/BackOffice/How-To-Setup-Web-Services.htm",
+          "notes": "No rate limits documented on the official pages reviewed."
+        },
+        "auth_methods": [
+          "oauth2"
+        ],
+        "webhooks": {
+          "available": null,
+          "notes": "No LS-specific webhook docs; Business Central webhooks may apply (not stated by LS Retail)."
+        },
+        "export_formats": [],
+        "database_access": null,
+        "partner_program": "https://www.lsretail.com/become-a-partner",
+        "verification_status": "partially_verified",
+        "evidence": [
+          {
+            "url": "https://help.lscentral.lsretail.com/Content/LS-Retail/BackOffice/How-To-Setup-Web-Services.htm",
+            "title": "How to: Set Up Web Services",
+            "publisher": "LS Retail",
+            "accessed": "2026-10-18",
+            "supports": "Uses Business Central web services"
+          },
+          {
+            "url": "https://help.lscentral.lsretail.com/Content/LS-Hospitality/LS-Hotels/BEC/OAuth-And-BC-In-SaaS.htm",
+            "title": "OAuth and Business Central in SaaS",
+            "publisher": "LS Retail",
+            "accessed": "2026-10-18",
+            "supports": "SaaS supports OAuth only"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer admin authorises the AUREX app via the vendor's OAuth consent flow with read-only scopes.",
+        "Confirm the customer's plan/edition includes API access.",
+        "Register AUREX callback URLs and (if used) webhook endpoints with the vendor.",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "oauth_rest",
+      "notes": "Business Central platform limits likely apply but are not stated by LS Retail."
+    },
+    {
+      "key": "bamboohr",
+      "name": "BambooHR",
+      "legal_name": null,
+      "categories": [
+        "workforce"
+      ],
+      "website": "https://www.bamboohr.com/",
+      "country": null,
+      "description": "HR information system with a REST API per company subdomain.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://documentation.bamboohr.com/docs/getting-started",
+          "notes": "Rate limits: No numeric limits published; throttled requests get 429 with Retry-After (https://documentation.bamboohr.com/docs/api-details)."
+        },
+        "auth_methods": [
+          "api_key",
+          "basic",
+          "oauth2"
+        ],
+        "webhooks": {
+          "available": true,
+          "notes": "Global and permissioned webhooks on employee field changes; HMAC SHA-256 signature; up to 5 retries (https://documentation.bamboohr.com/docs/webhooks)."
+        },
+        "export_formats": [
+          "json"
+        ],
+        "database_access": null,
+        "partner_program": "https://www.bamboohr.com/partner-programs/marketplace-program",
+        "verification_status": "verified",
+        "evidence": [
+          {
+            "url": "https://documentation.bamboohr.com/docs/getting-started",
+            "title": "Getting Started With The API",
+            "publisher": "BambooHR",
+            "accessed": "2026-10-18",
+            "supports": "API key used as Basic-auth username; OAuth flow"
+          },
+          {
+            "url": "https://documentation.bamboohr.com/docs/api-details",
+            "title": "Technical Overview",
+            "publisher": "BambooHR",
+            "accessed": "2026-10-18",
+            "supports": "Base URL; 429 handling"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer generates an API key/credential for a least-privilege integration user.",
+        "Network access to the endpoint (public URL, or VPN/on-prem gateway with IP allow-listing for self-hosted systems).",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "generic_rest",
+      "notes": ""
+    },
+    {
+      "key": "deputy",
+      "name": "Deputy",
+      "legal_name": "Deputy Corporation",
+      "categories": [
+        "workforce"
+      ],
+      "website": "https://www.deputy.com/",
+      "country": null,
+      "description": "Workforce scheduling, timesheets and attendance with a REST API.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://developer.deputy.com/docs/authenticating-with-deputy",
+          "notes": "No rate limits documented on the official pages reviewed."
+        },
+        "auth_methods": [
+          "oauth2",
+          "permanent_token"
+        ],
+        "webhooks": {
+          "available": true,
+          "notes": "One webhook per event type; JSON {topic, data}; X-Deputy-Secret checksum on Enterprise installs (https://developer.deputy.com/docs/webhook-overview)."
+        },
+        "export_formats": [
+          "json"
+        ],
+        "database_access": null,
+        "partner_program": "https://www.deputy.com/partners/integration",
+        "verification_status": "verified",
+        "evidence": [
+          {
+            "url": "https://developer.deputy.com/docs/authenticating-with-deputy",
+            "title": "Authenticating with Deputy Overview",
+            "publisher": "Deputy",
+            "accessed": "2026-10-18",
+            "supports": "OAuth 2.0 and permanent tokens"
+          },
+          {
+            "url": "https://developer.deputy.com/docs/webhook-overview",
+            "title": "Webhook Overview",
+            "publisher": "Deputy",
+            "accessed": "2026-10-18",
+            "supports": "Webhooks"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer admin authorises the AUREX app via the vendor's OAuth consent flow with read-only scopes.",
+        "Confirm the customer's plan/edition includes API access.",
+        "Register AUREX callback URLs and (if used) webhook endpoints with the vendor.",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "oauth_rest",
+      "notes": "No rate-limit or webhook-retry documentation found."
+    },
+    {
+      "key": "hubspot_crm",
+      "name": "HubSpot CRM",
+      "legal_name": "HubSpot, Inc.",
+      "categories": [
+        "crm"
+      ],
+      "website": "https://www.hubspot.com/",
+      "country": null,
+      "description": "CRM platform with REST APIs at api.hubapi.com.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+          "notes": "Rate limits: Public apps: 110 requests/10 s per installing account. Private apps: 100-190 per 10 s and 250,000-1,000,000/day depending on tier (https://developers.hubspot.com/docs/developer-tooling/platform/usage-guidelines)."
+        },
+        "auth_methods": [
+          "oauth2",
+          "static_access_token"
+        ],
+        "webhooks": {
+          "available": true,
+          "notes": "Webhooks for CRM objects with X-HubSpot-Signature; retries up to 10 times over 24 h (https://developers.hubspot.com/docs/api-reference/latest/webhooks/guide)."
+        },
+        "export_formats": [],
+        "database_access": null,
+        "partner_program": "https://www.hubspot.com/partners/app",
+        "verification_status": "verified",
+        "evidence": [
+          {
+            "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+            "title": "Authentication overview",
+            "publisher": "HubSpot",
+            "accessed": "2026-10-18",
+            "supports": "OAuth for multi-account apps; static tokens"
+          },
+          {
+            "url": "https://developers.hubspot.com/docs/developer-tooling/platform/usage-guidelines",
+            "title": "API usage guidelines and limits",
+            "publisher": "HubSpot",
+            "accessed": "2026-10-18",
+            "supports": "Rate limits"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer admin authorises the AUREX app via the vendor's OAuth consent flow with read-only scopes.",
+        "Confirm the customer's plan/edition includes API access.",
+        "Register AUREX callback URLs and (if used) webhook endpoints with the vendor.",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "oauth_rest",
+      "notes": ""
+    },
+    {
+      "key": "salesforce",
+      "name": "Salesforce (REST API)",
+      "legal_name": null,
+      "categories": [
+        "crm"
+      ],
+      "website": "https://www.salesforce.com/",
+      "country": null,
+      "description": "CRM platform with REST, SOAP, Bulk and Pub/Sub APIs; REST supports JSON and XML.",
+      "reported_association": null,
+      "integration_capabilities": {
+        "public_api": {
+          "available": true,
+          "docs_url": "https://trailhead.salesforce.com/content/learn/modules/api_basics/api_basics_overview",
+          "notes": "Rate limits: Rolling 24-hour request allocations and concurrency limits vary by edition/licences; numbers not verified (developer.salesforce.com returned HTTP 403 to our tools)."
+        },
+        "auth_methods": [
+          "oauth2",
+          "session_id"
+        ],
+        "webhooks": {
+          "available": null,
+          "notes": "No generic webhook product verified; Change Data Capture events via Pub/Sub API are retained up to 3 days (https://trailhead.salesforce.com/content/learn/modules/change-data-capture/understand-change-data-capture)."
+        },
+        "export_formats": [
+          "json",
+          "xml"
+        ],
+        "database_access": null,
+        "partner_program": "https://www.salesforce.com/partners/become-a-partner/",
+        "verification_status": "partially_verified",
+        "evidence": [
+          {
+            "url": "https://trailhead.salesforce.com/content/learn/modules/api_basics/api_basics_overview",
+            "title": "Salesforce Platform API Integration Guide",
+            "publisher": "Salesforce",
+            "accessed": "2026-10-18",
+            "supports": "API types; OAuth or session ID; limit types; editions with API access"
+          },
+          {
+            "url": "https://trailhead.salesforce.com/content/learn/modules/api_basics/api_basics_rest",
+            "title": "Use REST API",
+            "publisher": "Salesforce",
+            "accessed": "2026-10-18",
+            "supports": "REST supports JSON and XML"
+          }
+        ]
+      },
+      "activation_requirements": [
+        "Customer admin authorises the AUREX app via the vendor's OAuth consent flow with read-only scopes.",
+        "Confirm the customer's plan/edition includes API access.",
+        "Register AUREX callback URLs and (if used) webhook endpoints with the vendor.",
+        "Data-sharing agreement / DPA covering the synced data."
+      ],
+      "recommended_connector": "oauth_rest",
+      "notes": "API access requires Enterprise, Unlimited, Developer or Performance edition, or Professional with add-on (per Trailhead)."
+    }
+  ]
+}

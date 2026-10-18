@@ -1,0 +1,160 @@
+{
+  "sources": [
+    {
+      "name": "DMart Investor Relations - Investor Updates (FY2026-27)",
+      "type": "official_ir",
+      "url": "https://www.dmartindia.com/investor-relations/investor-updates/2026-2027",
+      "companies": [
+        "avenue_supermarts"
+      ],
+      "verified_working": true,
+      "checked_at": "2026-10-18",
+      "notes": "Loads in a browser (JavaScript-rendered; a plain HTTP fetch returned only the page shell). Lists all exchange filings - results, press releases, store-opening intimations, management changes - with PDFs served from api.dmartindia.com. No RSS. The path is per fiscal year (e.g. /2025-2026), so update it each April."
+    },
+    {
+      "name": "NSE - Latest corporate announcements (RSS)",
+      "type": "exchange_announcements",
+      "url": "https://nsearchives.nseindia.com/content/RSS/Online_announcements.xml",
+      "companies": [
+        "avenue_supermarts",
+        "medplus",
+        "vishal_mega_mart"
+      ],
+      "verified_working": true,
+      "checked_at": "2026-10-18",
+      "notes": "Valid RSS ('NSE News - Latest Announcements'); 59 items at check, newest 18-Oct-2026 20:38. Market-wide: filter by item title (company name, e.g. 'Avenue Supermarts Limited') or by the attachment filename prefix (e.g. 'DMART_', 'MEDPLUS_', 'VMM_'). Loaded in a browser; a server-side fetch timed out, so polling may need browser-like headers. Review NSE website terms before automated polling."
+    },
+    {
+      "name": "BSE - Avenue Supermarts corporate announcements",
+      "type": "exchange_announcements",
+      "url": "https://www.bseindia.com/stock-share-price/avenue-supermarts-ltd/dmart/540376/corp-announcements/",
+      "companies": [
+        "avenue_supermarts"
+      ],
+      "verified_working": true,
+      "checked_at": "2026-10-18",
+      "notes": "Loads in a browser (JavaScript-rendered, filterable list); plain HTTP fetch returned HTTP 403. No RSS verified. Use the NSE feed or DMart IR for automation."
+    },
+    {
+      "name": "MR D.I.Y. Investor Relations - Newsroom (Bursa announcements mirror)",
+      "type": "official_ir",
+      "url": "https://corporate.mrdiy.com/newsroom.html",
+      "companies": [
+        "mr_diy_group"
+      ],
+      "verified_working": true,
+      "checked_at": "2026-10-18",
+      "notes": "Works with plain HTTP fetch. Mirrors Bursa announcements with reference numbers and attachments (15 per page; newest 15 Oct 2026 at check). Filters: /cat/11588 (financial results), /year/2026. No RSS - e-mail alerts only."
+    },
+    {
+      "name": "MR D.I.Y. Investor Relations - Press releases",
+      "type": "official_ir",
+      "url": "https://corporate.mrdiy.com/newsroom_press_release.html",
+      "companies": [
+        "mr_diy_group"
+      ],
+      "verified_working": true,
+      "checked_at": "2026-10-18",
+      "notes": "Works with plain HTTP fetch; company press releases (PDF). No RSS."
+    },
+    {
+      "name": "Bursa Malaysia - Company announcements (MR D.I.Y., stock code 5296)",
+      "type": "exchange_announcements",
+      "url": "https://www.bursamalaysia.com/market_information/announcements/company_announcement?company=5296",
+      "companies": [
+        "mr_diy_group",
+        "speed_mart_99"
+      ],
+      "verified_working": true,
+      "checked_at": "2026-10-18",
+      "notes": "Loads in a browser (JavaScript-rendered table; newest row 16 Oct 2026 at check); plain HTTP fetch returned HTTP 403. Change company= to 5326 for 99 Speed Mart (that variant was not separately tested). Bursa market data is licensed - check terms before automated use."
+    },
+    {
+      "name": "99 Speed Mart - Financial Information (IR)",
+      "type": "official_ir",
+      "url": "https://99speedmart.com.my/financial-information/",
+      "companies": [
+        "speed_mart_99"
+      ],
+      "verified_working": true,
+      "checked_at": "2026-10-18",
+      "notes": "Loads with plain HTTP fetch; audited annual figures and links to reports/press releases. No RSS verified."
+    },
+    {
+      "name": "Wellness Forever - Investor page",
+      "type": "official_ir",
+      "url": "https://wellnessforever.in/investor.php",
+      "companies": [
+        "wellness_forever"
+      ],
+      "verified_working": true,
+      "checked_at": "2026-10-18",
+      "notes": "Loads, but contains only codes/policies, board committees and the investor-grievance contact - no announcements or financials. Unlisted company; rely on press feeds and CRISIL rating rationales for updates."
+    },
+    {
+      "name": "Business Standard - Companies (RSS)",
+      "type": "rss",
+      "url": "https://www.business-standard.com/rss/companies-101.rss",
+      "companies": [
+        "avenue_supermarts",
+        "wellness_forever",
+        "medplus",
+        "vishal_mega_mart"
+      ],
+      "verified_working": true,
+      "checked_at": "2026-10-18",
+      "notes": "Valid RSS ('Companies'); 35 items, newest 18 Oct 2026 at check, loaded in a browser. A plain server-side fetch returned HTTP 403 - ingestion may need browser-like headers. General feed: keyword-filter for company names. Parse as UTF-8 (rupee sign). Check publisher terms for commercial reuse."
+    },
+    {
+      "name": "Mint - Companies (RSS)",
+      "type": "rss",
+      "url": "https://www.livemint.com/rss/companies",
+      "companies": [
+        "avenue_supermarts",
+        "wellness_forever",
+        "medplus",
+        "vishal_mega_mart"
+      ],
+      "verified_working": true,
+      "checked_at": "2026-10-18",
+      "notes": "Valid RSS ('mint - companies'); 35 items, newest 18 Oct 2026 at check, loaded in a browser (our fetch tool was blocked from this domain). General feed: keyword-filter. Check publisher terms for commercial reuse."
+    },
+    {
+      "name": "Moneycontrol - Business News (RSS)",
+      "type": "rss",
+      "url": "https://www.moneycontrol.com/rss/business.xml",
+      "companies": [
+        "avenue_supermarts",
+        "medplus",
+        "vishal_mega_mart"
+      ],
+      "verified_working": false,
+      "checked_at": "2026-10-18",
+      "notes": "Loads, but STALE: the newest item was dated 23 Apr 2024 on 2026-10-18. Do not use."
+    },
+    {
+      "name": "New Straits Times - feed (RSS)",
+      "type": "rss",
+      "url": "https://www.nst.com.my/feed",
+      "companies": [
+        "mr_diy_group",
+        "speed_mart_99"
+      ],
+      "verified_working": true,
+      "checked_at": "2026-10-18",
+      "notes": "Valid RSS with dated items (general news, not company-specific) - keyword-filter. Checked by a research sub-task on 2026-10-18."
+    },
+    {
+      "name": "Bernama - RSS",
+      "type": "rss",
+      "url": "https://www.bernama.com/en/rssfeed.php",
+      "companies": [
+        "mr_diy_group",
+        "speed_mart_99"
+      ],
+      "verified_working": true,
+      "checked_at": "2026-10-18",
+      "notes": "Valid RSS but items carry no publication dates, which limits usefulness; general news. Checked by a research sub-task on 2026-10-18."
+    }
+  ]
+}

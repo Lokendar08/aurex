@@ -1,0 +1,7 @@
+# Lint settings for repository-level tooling (scripts/). Backend code uses backend/pyproject.toml.
+extend = "backend/pyproject.toml"
+
+[lint.per-file-ignores]
+# Development-only helpers: fixed local credentials for the throwaway dev database, and subprocess calls with
+# argument lists built from constants (no shell, no user input).
+"scripts/*" = ["S105", "S603"]

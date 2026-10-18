@@ -1,0 +1,173 @@
+# AUREX production-style stack.
+#
+#   cp .env.example .env            # then set every value marked REQUIRED
+#   docker compose up -d --build    # postgres, redis, migrations, api, worker, beat, web, edge, backups
+#   docker compose run --rm seed    # optional: load the synthetic NovaMart demo (needs AUREX_DEMO_MODE=true)
+#
+# Only the edge proxy publishes ports. PostgreSQL, Redis, the API and the Next.js server stay on the
+# internal network. See docs/DEPLOYMENT.md for TLS, scaling, backups and upgrades.
+name: aurex
+
+x-backend-image: &backend-image
+  build: ./backend
+  image: aurex-backend:${AUREX_VERSION:-local}
+
+x-backend-env: &backend-env
+  AUREX_ENV: ${AUREX_ENV:-production}
+  AUREX_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-aurex}:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}@postgres:5432/${POSTGRES_DB:-aurex}
+  AUREX_REDIS_URL: redis://redis:6379/0
+  AUREX_TASK_BACKEND: celery
+  AUREX_STORAGE_DIR: /data/storage
+  AUREX_TRUSTED_PROXY_HOPS: "1"   # the Caddy edge overwrites X-Forwarded-For with the real client address
+  AUREX_LOG_JSON: "true"
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-aurex}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+      POSTGRES_DB: ${POSTGRES_DB:-aurex}
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]   # Celery broker + shared rate-limit counters
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  migrate:
+    <<: *backend-image
+    command: ["alembic", "upgrade", "head"]
+    env_file: .env
+    environment: *backend-env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
+  api:
+    <<: *backend-image
+    restart: unless-stopped
+    env_file: .env
+    environment: *backend-env
+    volumes:
+      - storage:/data/storage
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+
+  worker:
+    <<: *backend-image
+    restart: unless-stopped
+    command: ["celery", "-A", "app.worker.celery_app", "worker", "--loglevel=INFO", "--concurrency=2", "-Q", "aurex"]
+    env_file: .env
+    environment: *backend-env
+    volumes:
+      - storage:/data/storage
+    healthcheck:
+      disable: true
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+
+  beat:
+    <<: *backend-image
+    restart: unless-stopped
+    command: ["celery", "-A", "app.worker.celery_app", "beat", "--loglevel=INFO",
+              "--schedule", "/data/storage/celerybeat-schedule"]
+    env_file: .env
+    environment: *backend-env
+    volumes:
+      - storage:/data/storage
+    healthcheck:
+      disable: true
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+
+  web:
+    build:
+      context: ./frontend
+      args:
+        AUREX_API_URL: http://api:8000
+    image: aurex-web:${AUREX_VERSION:-local}
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+
+  edge:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "${AUREX_HTTP_PORT:-80}:80"
+      - "${AUREX_HTTPS_PORT:-443}:443"
+    environment:
+      AUREX_SITE_ADDRESS: ${AUREX_SITE_ADDRESS:-:80}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - web
+
+  backup:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "/backup/backup.sh"]
+    environment:
+      PGHOST: postgres
+      PGUSER: ${POSTGRES_USER:-aurex}
+      PGPASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+      PGDATABASE: ${POSTGRES_DB:-aurex}
+      BACKUP_INTERVAL_SECONDS: ${BACKUP_INTERVAL_SECONDS:-86400}
+      BACKUP_RETENTION_DAYS: ${BACKUP_RETENTION_DAYS:-14}
+    volumes:
+      - ./deploy/backup:/backup:ro
+      - backups:/backups
+      - storage:/data/storage:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  seed:
+    <<: *backend-image
+    profiles: ["demo"]
+    command: ["python", "-m", "app.seed.demo", "--train"]
+    env_file: .env
+    environment: *backend-env
+    volumes:
+      - storage:/data/storage
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    restart: "no"
+
+volumes:
+  pgdata:
+  redisdata:
+  storage:
+  backups:
+  caddy_data:
+  caddy_config:
