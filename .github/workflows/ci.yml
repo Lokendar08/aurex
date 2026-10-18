@@ -1,0 +1,65 @@
+name: ci
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: aurex
+          POSTGRES_PASSWORD: aurex
+          POSTGRES_DB: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U aurex"
+          --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      UV_PYTHON: "3.13"
+      # The test session drops/creates this database, runs every migration and seeds the compact NovaMart set.
+      AUREX_TEST_DATABASE_URL: postgresql+psycopg://aurex:aurex@127.0.0.1:5432/aurex_test
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.11.24"
+      - run: uv sync --frozen
+      - run: uv run ruff check app tests
+      - run: uv run pytest -q
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npx tsc --noEmit
+      - run: npm run lint
+      - run: npm run build
+
+  images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate compose file
+        run: POSTGRES_PASSWORD=ci-only touch .env && POSTGRES_PASSWORD=ci-only docker compose config --quiet
+      - run: docker build -t aurex-backend:ci ./backend
+      - run: docker build -t aurex-web:ci --build-arg AUREX_API_URL=http://api:8000 ./frontend
