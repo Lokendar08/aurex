@@ -31,6 +31,7 @@ Windows dev box (Git Bash paths shown). Backend venv: `backend/.venv` (managed b
 
 | Task | Command |
 |---|---|
+| Everything, one click (Windows) | `launch.bat` / `launch.bat stop|status|reset-demo` (logic in `scripts/launch.ps1`; keep it ASCII-only and CRLF for PowerShell 5.1) |
 | Dev PostgreSQL 17 (port 5433, `aurex`/`aurex`) | `python scripts/devdb.py init|start|stop|status|create-dbs|reset-test` (repo root) |
 | Migrate | `cd backend && .venv/Scripts/python.exe -m alembic upgrade head` |
 | Seed demo | `cd backend && .venv/Scripts/python.exe -m app.seed.demo [--small] [--reset] [--train]` |

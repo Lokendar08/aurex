@@ -18,6 +18,11 @@ const nextConfig: NextConfig = {
   partialPrefetching: true,
   output: "standalone",
   poweredByHeader: false,
+  experimental: {
+    // /api/* is proxied to FastAPI. The first analytics requests after a database start can be slow on a cold
+    // cache; allow them up to two minutes instead of the default 30 s before the proxy gives up.
+    proxyTimeout: 120_000,
+  },
   turbopack: {
     rules: {
       "*.css": {

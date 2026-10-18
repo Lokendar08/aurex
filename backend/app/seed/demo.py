@@ -245,8 +245,15 @@ def main() -> None:
     parser.add_argument("--reset", action="store_true", help="delete the existing demo organization first")
     parser.add_argument("--train", action="store_true",
                         help="train the default forecast plan afterwards (company, every store, every category)")
+    parser.add_argument("--if-empty", action="store_true",
+                        help="do nothing when the demo organization already exists (used by launch.bat)")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO)
+    if args.if_empty and not args.reset:
+        with session_scope() as db:
+            if db.scalar(select(Organization.id).where(Organization.is_demo.is_(True))) is not None:
+                print("NovaMart demo data already present; nothing to do.")
+                return
     from app.seed.reference import load_reference_data
 
     with session_scope() as db:

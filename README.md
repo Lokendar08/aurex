@@ -27,6 +27,31 @@ report and answer based on it is labelled synthetic.
 | Workflow | Reports (PDF/CSV/Excel with checksums), rule-based and scenario-based recommendations, approvals with separation of duties, tasks, notifications, predicted-vs-actual outcome tracking |
 | Operations | Docker images, docker-compose (PostgreSQL, Redis, API, Celery worker/beat, web, Caddy edge, backups), CI workflow, retention purge, health/readiness endpoints |
 
+## One-click launch on Windows
+
+On a Windows 10/11 (64-bit) PC with nothing else installed: get the project (clone it, or **Code → Download ZIP** and
+extract it), then double-click **`launch.bat`**.
+
+The first run downloads portable copies of uv, Python 3.13, Node.js 22 and PostgreSQL 17 into `.tools\` inside the
+project (no admin rights needed), installs the packages (roughly half a gigabyte of downloads in total), creates a local
+database on port 5433, loads the synthetic NovaMart demo with its forecast models, builds the web app, starts everything
+and opens http://127.0.0.1:3000 (or the next free port). Expect 10–20 minutes once, depending on the connection; later runs start in seconds. The only system-wide
+install is the Microsoft Visual C++ runtime, and only if Windows lacks it (PostgreSQL needs it; Windows asks for
+permission once).
+
+| Command | Effect |
+|---|---|
+| `launch.bat` | Set up whatever is missing, start AUREX, open the browser |
+| `launch.bat stop` | Stop the web app, the API and the database |
+| `launch.bat status` | Show what is running |
+| `launch.bat reset-demo` | Reload the NovaMart demo data from scratch |
+| `launch.bat start -Dev` | Run the web app in development mode (hot reload) |
+
+Other switches: `-NoBrowser`, `-Rebuild` (force a web build), `-PortableTools` (ignore uv/Node.js installed on the PC),
+`-DryRun` (print what would be downloaded or started), `-NoPause`. Logs are in `.tools\logs`. Ports in use by other
+programs are skipped automatically (API from 8000, web app from 3000, checked on IPv4 and IPv6). After starting the
+API the launcher computes the demo dashboard once, so the first page you open is fast.
+
 ## Quick start (local development)
 
 Prerequisites: Python 3.13 with [uv](https://docs.astral.sh/uv/), Node.js 22, and PostgreSQL 17.

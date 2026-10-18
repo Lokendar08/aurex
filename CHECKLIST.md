@@ -107,6 +107,8 @@ Evidence for "verified" is in [docs/TESTING.md](docs/TESTING.md). Last updated: 
 ## 18. Deployment and documentation
 - [x] Dockerfiles, docker-compose (PostgreSQL, Redis, migrate, API, worker, beat, web, Caddy edge, backup, demo seed), `.env.example`, CI workflow
 - [x] README, CLAUDE.md, this checklist, docs (architecture, data model, metrics, integrations, forecasting, Decision Lab, advisor, NovaMart, security, deployment, testing)
+- [x] One-click Windows launcher `launch.bat` (`scripts/launch.ps1`): portable uv/Python/Node.js/PostgreSQL in `.tools\`, packages, database, demo data, build, start/stop/status/reset-demo; verified on the development PC
+- [~] `launch.bat` download path on a genuinely fresh PC verified as a dry run only (no downloads allowed on the development PC)
 
 ## Known limitations and next steps
 - MFA/SSO and e-mail delivery are not implemented.

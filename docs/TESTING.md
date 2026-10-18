@@ -32,6 +32,8 @@ through Playwright's API request context.
 | GitHub Actions CI — backend | `.github/workflows/ci.yml` on ubuntu-latest, PostgreSQL 17 service (run 39158620456, commit 4ad5b38) | ruff clean; **168 passed** (31.8 s) |
 | GitHub Actions CI — frontend | same run | `tsc`, `eslint` and `next build` passed (37 pages) |
 | GitHub Actions CI — images | same run | `docker compose config` valid; `aurex-backend` and `aurex-web` images built |
+| `launch.bat` — fresh-PC simulation | `launch.bat start -PortableTools -DryRun -NoPause` | Lists every step in order: download uv 0.11.24 and Node.js 22.19.0, install backend and frontend packages, PostgreSQL binaries, database start and migrations, demo data, web build, API and web start |
+| `launch.bat` — real run on the development PC | `launch.bat start -NoBrowser -NoPause` from a stopped state, with `UV_OFFLINE=1` and npm offline as a guard against downloads | PostgreSQL started, web app rebuilt, API started, dashboard warmed up, web app started: 37 s. Through the web origin: sign-in page, demo sign-in, dashboard (1.1 s) and a Decision Lab simulation returned 200. `launch.bat status` correct; a repeat `start` reused the running servers in 5 s; `launch.bat stop` stopped web, API and PostgreSQL |
 
 End-to-end tests executed (final run, latest code):
 
@@ -97,6 +99,9 @@ Measured timings (development machine, full 36-month NovaMart dataset):
 - Live vendor connections (none is authorized; see INTEGRATIONS.md), live market-data providers and live news fetching
   (disabled by default). Connectors are tested with injected transports and a local SFTP server.
 - Real-browser downloads in e2e (deliberately avoided; files are verified through the API).
+- `launch.bat` on a computer that really has nothing installed: its download path (uv, Python, Node.js, PostgreSQL
+  binaries, packages, the Visual C++ runtime) ran only as a dry run here, because nothing may be downloaded on the
+  development PC. Every other step ran for real.
 
 ## 6. Defects found by testing and review, and fixed
 
@@ -116,6 +121,11 @@ returning 404; partial interpolation of long gaps; partial last baseline month; 
 Second review: workforce scenarios now need workforce access; cost assumptions redacted on recommendations and in the advisor's simulation tool; opex assumptions without absolute bases; recommendations from multi-store scenarios visible to their store-scoped authors; payback evaluated whenever cash dips; aggregate rebuild after failures in its own session; vendor profiles stay `awaiting_credentials` after uploads; weekly interpolation of interior gaps only; a 50% cost-coverage floor for the baseline margin; budget COGS consistent with estimated gross profit; store-level marketing scenarios using allocated, not company, spend; cookie paths from the API prefix; platform-wide reference rows unique (migration 0003); dead code removed.
 Verification: an e2e test that depended on scenarios left by earlier runs; a first dashboard request of 18 s right after a bulk seed (autovacuum contention), fixed by ending the seed with `VACUUM (ANALYZE)`.
 Frontend: download helper revoking the object URL too early and saving empty files when a download manager intercepts.
+Launcher testing: `localhost` resolving to IPv6 `::1` where another program listened on port 3000 (ports are now
+checked on every address and the launcher opens `127.0.0.1`); servers started with `Start-Process` redirection
+inheriting the launcher's output pipe (now started through ShellExecute with `cmd.exe` writing the logs); the 30 s
+default Next.js proxy timeout failing the first cold-cache dashboard request after a database start (now 120 s, and
+the launcher warms the dashboard up before opening the browser).
 CI (first run on GitHub Actions): `uv run pytest` could not import `app` (the backend is not an installed package; fixed
 with `pythonpath = ["."]` in the pytest config), and `tsc` on a fresh checkout lacked Next.js's generated `LayoutProps`
 type (the root layout now types its props explicitly). The image job passed on the first run.

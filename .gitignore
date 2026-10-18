@@ -38,3 +38,6 @@ backups/
 Thumbs.db
 .idea/
 .vscode/
+
+# Portable tools, downloads, logs and state created by launch.bat
+.tools/
