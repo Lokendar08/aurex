@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
 import { preload } from "react-dom";
 
 import { Providers } from "@/components/providers";
@@ -31,7 +32,8 @@ const PRELOADED_FONTS = [
   "/fonts/schibsted-grotesk-latin.woff2",
 ];
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+// Explicit props (not the generated global LayoutProps) so `tsc` passes on a fresh checkout before `next build`.
+export default function RootLayout({ children }: { children: ReactNode }) {
   for (const href of PRELOADED_FONTS) {
     preload(href, { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
   }

@@ -46,6 +46,9 @@ package = false
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+# The backend is not installed as a package (tool.uv.package = false): make `app` importable however pytest is
+# started (`uv run pytest`, the pytest script, or `python -m pytest`).
+pythonpath = ["."]
 addopts = "-ra --strict-markers"
 markers = [
     "slow: long-running tests (full NovaMart seed, model training)",
