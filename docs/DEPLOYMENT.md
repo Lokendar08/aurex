@@ -1,9 +1,8 @@
 # Deployment
 
-> Status: the Dockerfiles, `docker-compose.yml`, Caddy configuration, backup scripts and CI workflow are
-> provided but were **not built or run** in the development environment (Docker was not installed there).
-> Everything else in this document — migrations, the API, workers in inline mode, the seed, the periodic CLI —
-> was executed locally. See [TESTING.md](TESTING.md).
+> Status: on GitHub Actions the compose file validates and both Docker images build (see [TESTING.md](TESTING.md)).
+> The stack itself — Caddy, Celery worker/beat, backups — has **not been started** (Docker was not installed on the
+> development machine). Migrations, the API, inline workers, the seed and the periodic CLI were executed locally.
 
 ## 1. Topology (docker-compose)
 

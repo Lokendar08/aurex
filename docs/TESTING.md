@@ -29,6 +29,9 @@ through Playwright's API request context.
 | Production build | `AUREX_API_URL=http://127.0.0.1:8000 npx next build` | success; 37 static pages; no font or network fetches (fonts self-hosted) |
 | E2E part B (`e2e/app-smoke-b.spec.ts`) | production standalone server on :3100, API on :8000, installed Chrome | **9 passed** (18.2 s) |
 | E2E part A (`e2e/app-smoke.spec.ts`) | same | **4 passed** (9.2 s) |
+| GitHub Actions CI — backend | `.github/workflows/ci.yml` on ubuntu-latest, PostgreSQL 17 service (run 39158620456, commit 4ad5b38) | ruff clean; **168 passed** (31.8 s) |
+| GitHub Actions CI — frontend | same run | `tsc`, `eslint` and `next build` passed (37 pages) |
+| GitHub Actions CI — images | same run | `docker compose config` valid; `aurex-backend` and `aurex-web` images built |
 
 End-to-end tests executed (final run, latest code):
 
@@ -88,8 +91,8 @@ Measured timings (development machine, full 36-month NovaMart dataset):
 
 ## 5. Not executed in this environment
 
-- Docker images, `docker-compose.yml` and the CI workflow were written but **not built or run** (Docker is not
-  installed on the development machine; CI runs only on a CI runner).
+- The docker-compose **stack was not started** (no Docker on the development machine). On GitHub Actions the compose file
+  validates and both images build; running the stack end to end (`docker compose up`, seed, browse) has not been done.
 - The advisor's LLM mode against the live Anthropic API (no API key configured); deterministic mode is fully tested.
 - Live vendor connections (none is authorized; see INTEGRATIONS.md), live market-data providers and live news fetching
   (disabled by default). Connectors are tested with injected transports and a local SFTP server.
@@ -113,3 +116,6 @@ returning 404; partial interpolation of long gaps; partial last baseline month; 
 Second review: workforce scenarios now need workforce access; cost assumptions redacted on recommendations and in the advisor's simulation tool; opex assumptions without absolute bases; recommendations from multi-store scenarios visible to their store-scoped authors; payback evaluated whenever cash dips; aggregate rebuild after failures in its own session; vendor profiles stay `awaiting_credentials` after uploads; weekly interpolation of interior gaps only; a 50% cost-coverage floor for the baseline margin; budget COGS consistent with estimated gross profit; store-level marketing scenarios using allocated, not company, spend; cookie paths from the API prefix; platform-wide reference rows unique (migration 0003); dead code removed.
 Verification: an e2e test that depended on scenarios left by earlier runs; a first dashboard request of 18 s right after a bulk seed (autovacuum contention), fixed by ending the seed with `VACUUM (ANALYZE)`.
 Frontend: download helper revoking the object URL too early and saving empty files when a download manager intercepts.
+CI (first run on GitHub Actions): `uv run pytest` could not import `app` (the backend is not an installed package; fixed
+with `pythonpath = ["."]` in the pytest config), and `tsc` on a fresh checkout lacked Next.js's generated `LayoutProps`
+type (the root layout now types its props explicitly). The image job passed on the first run.

@@ -101,8 +101,8 @@ Evidence for "verified" is in [docs/TESTING.md](docs/TESTING.md). Last updated: 
 ## 16. Tests
 - [x] Backend suite executed and green: 168 passed; ruff clean; `alembic check` shows no model/schema drift
 - [x] Frontend `tsc` and `eslint` clean; production build succeeds without network fetches; headless e2e 13/13 passed (9 part B + 4 part A) against the production build with the installed Chrome
-- [ ] Docker images and compose stack built/run (Docker not available in the development environment)
-- [ ] CI workflow executed on a CI runner
+- [x] CI green on GitHub Actions: backend 168 passed (PostgreSQL 17), frontend type-check/lint/build, Docker images built
+- [ ] docker-compose stack started and exercised end to end (images build on CI; Docker is not available on the development machine)
 
 ## 18. Deployment and documentation
 - [x] Dockerfiles, docker-compose (PostgreSQL, Redis, migrate, API, worker, beat, web, Caddy edge, backup, demo seed), `.env.example`, CI workflow
