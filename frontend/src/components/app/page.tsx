@@ -38,7 +38,7 @@ export function PageHeader({
 }) {
   useDocumentTitle(title);
   return (
-    <div className={cn("mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between", className)}>
+    <div className={cn("mk-rise mb-6 flex flex-col gap-4 border-b border-border/70 pb-5 md:flex-row md:items-end md:justify-between", className)}>
       <div className="min-w-0">
         <h1 className="font-display text-[1.625rem] leading-tight font-semibold tracking-[-0.022em] text-balance sm:text-[1.875rem]">
           {title}
@@ -79,7 +79,7 @@ export function Panel({
     <section
       aria-labelledby={title ? headingId : undefined}
       aria-busy={dimmed || undefined}
-      className={cn("flex min-w-0 flex-col rounded-xl bg-card text-card-foreground ring-1 ring-foreground/10", className)}
+      className={cn("flex min-w-0 flex-col rounded-xl bg-card text-card-foreground shadow-[0_1px_0_oklch(1_0_0/0.5)_inset,0_1px_2px_oklch(0.2_0.02_80/0.04)] ring-1 ring-foreground/10 transition-shadow duration-300 hover:shadow-[0_8px_28px_-14px_oklch(0.2_0.02_80/0.22)]", className)}
     >
       {title || actions ? (
         <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2 px-4 pt-4 sm:px-5">
