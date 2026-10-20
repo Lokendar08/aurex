@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import { AurexLogo } from "@/components/brand/logo";
+import { cn } from "@/lib/utils";
 
 import { SIGN_IN_HREF, SIGN_UP_HREF } from "./content";
 import { Container, CtaLink } from "./primitives";
@@ -17,9 +21,27 @@ export function SkipLink() {
   );
 }
 
+/**
+ * Sticky header that floats transparent over the dark hero and settles into a blurred solid bar once the page
+ * has scrolled. Its negative bottom margin lets the first section run underneath it.
+ */
 export function SiteHeader() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 24);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-navy-900 text-white">
+    <header
+      className={cn(
+        "sticky top-0 z-40 -mb-16 border-b text-white transition-[background-color,border-color,backdrop-filter] duration-300",
+        scrolled ? "border-white/10 bg-navy-950/95 backdrop-blur-xl" : "border-transparent bg-transparent",
+      )}
+    >
       <Container className="flex h-16 items-center gap-6 lg:gap-10">
         <Link
           href="/"
